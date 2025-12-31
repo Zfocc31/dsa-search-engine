@@ -1,26 +1,26 @@
 # 🔍 DSA Search Engine
 
-A **fully deployed, in-memory TF-IDF search engine** for **Data Structures & Algorithms problems**, aggregating questions from **LeetCode**, **Codeforces**, and **CodeChef**.
+A **fully deployed, in-memory TF-IDF search engine** for **Data Structures & Algorithms (DSA) problems**, aggregating questions from **LeetCode**, **Codeforces**, and **CodeChef**.
 
-Built using **vanilla JavaScript**, **Node.js**, and **Express**, this project requires **no external database** and focuses on search relevance, text preprocessing, and ranking algorithms.
+Built using **vanilla JavaScript**, **Node.js**, and **Express**, this project focuses on implementing search relevance, text preprocessing, and ranking algorithms — **without using any external database**.
 
 🌐 **Live Demo:**  
-👉 https://dsa-search-engine-ddpt.onrender.com
+https://dsa-search-engine-ddpt.onrender.com
 
 ---
 
-<img src="public/images/dsa-search.png" alt="DSA Search Engine homepage" width="100%"/>
+<img src="public/images/dsa-search.png" alt="DSA Search Engine Homepage" width="100%" />
 
 ---
 
 ## ✨ Features
 
 - **Unified Dataset**
-  - Merges problems from LeetCode, Codeforces, and CodeChef into a single dataset (`all_problems.json`)
+  - Merges problem metadata from LeetCode, Codeforces, and CodeChef into a single dataset (`all_problems.json`)
 
 - **Custom TF-IDF Search Engine**
   - Text normalization (lowercasing, punctuation removal)
-  - Tokenization and stop-word removal
+  - Tokenization and stop-word filtering
   - Porter stemming
   - Document Frequency (DF) & Inverse Document Frequency (IDF)
   - Sparse TF-IDF vector construction
@@ -29,7 +29,7 @@ Built using **vanilla JavaScript**, **Node.js**, and **Express**, this project r
 - **Search API**
   - `POST /search`
   - Accepts `{ query: string }`
-  - Returns **top 10 most relevant problems**
+  - Returns the **top 10 most relevant problems**
 
 - **Vanilla Frontend**
   - Pure HTML, CSS, and JavaScript
@@ -43,83 +43,67 @@ Built using **vanilla JavaScript**, **Node.js**, and **Express**, this project r
 - **Backend:** Node.js, Express
 - **Search Engine:** Custom TF-IDF implementation
 - **Frontend:** HTML, CSS, JavaScript
-- **Deployment:** Render (single service – API + static frontend)
+- **Deployment:** Render (single service for API + static frontend)
 
 ---
 
 ## 🧰 Prerequisites
 
-- **Node.js** v18+
+- **Node.js** v18 or higher
 
 ---
 
 ## 🔧 Installation & Local Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Zfocc31/dsa-search-engine.git
-   cd dsa-search-engine
-Install dependencies
-
-bash
-Copy code
+```bash
+git clone https://github.com/Zfocc31/dsa-search-engine.git
+cd dsa-search-engine
 npm install
-Generate unified dataset
+node merge.js   # Generates all_problems.json
 
-bash
-Copy code
-node merge.js
-# Generates all_problems.json
 ▶️ Running the Application
-bash
-Copy code
 node src/index.js
-Frontend available at: http://localhost:3000
 
+Frontend available at: http://localhost:3000
 API endpoint: POST /search
 
 ⚙️ How It Works
+
 Data Loading
 
-tfidfIndex.js loads all_problems.json into memory at server startup.
+   tfidfIndex.js loads all_problems.json into memory during server startup.
 
 Preprocessing
 
-Lowercasing and punctuation removal
-
-Tokenization
-
-Stop-word filtering
-
-Porter stemming
+   Lowercasing and punctuation removal
+   Tokenization
+   Stop-word filtering
+   Porter stemming
 
 Index Building
 
-Compute document frequency (DF)
-
-Calculate inverse document frequency (IDF)
-
-Build sparse TF-IDF vectors for each problem
+   Compute document frequency (DF) per term
+   Calculate inverse document frequency (IDF)
+   Build sparse TF-IDF vectors for each problem
 
 Search Flow
 
-User query is preprocessed identically
-
-Query TF-IDF vector is generated
-
-Cosine similarity is computed against all documents
-
-Top 10 ranked results are returned
+   User query is preprocessed identically
+   Query TF-IDF vector is generated
+   Cosine similarity is computed against all documents
+   Top 10 ranked results are returned
 
 🚀 Deployment
-The application is deployed on Render as a single Node.js service serving both:
 
-REST API
+The application is deployed on Render as a single Node.js service serving:
 
-Static frontend
+   REST API
+   Static frontend
 
-🔗 Live URL: https://dsa-search-engine-ddpt.onrender.com
+🔗 Live URL:
+https://dsa-search-engine-ddpt.onrender.com
 
 👤 Author
+
 Rahul Sinha
 GitHub: https://github.com/Zfocc31

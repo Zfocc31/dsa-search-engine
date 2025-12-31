@@ -82,6 +82,4 @@ node src/index.js
 
 ---
 
-## 📄 License
 
-MIT © Aaqib Javaid

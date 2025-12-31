@@ -12,9 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaqib605/dsa-search-engine.git"
+    "url": "git+https://github.com/Zfocc31/dsa-search-engine.git"
   },
-  "author": "Aaqib Javaid",
+  "author": "Rahul",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

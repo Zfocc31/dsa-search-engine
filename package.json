@@ -1,0 +1,26 @@
+{
+  "name": "dsa-search-engine",
+  "version": "1.0.0",
+  "description": "A DSA problem search engine leveraging web scraping, efficient data storage, and a Node.js backend implementing TF-IDF to provide relevant results for user queries via a React web interface.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "merge": "node utils/merge.js",
+    "scrape": "node scrape.js",
+    "all": "npm run scrape && npm run merge && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaqib605/dsa-search-engine.git"
+  },
+  "author": "Aaqib Javaid",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "natural": "^8.0.1",
+    "puppeteer": "^24.7.2",
+    "stopword": "^3.1.4"
+  }
+}
